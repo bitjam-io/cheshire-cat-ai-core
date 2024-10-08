@@ -161,7 +161,8 @@ class RabbitHole:
         fileinfo = stray.mad_hatter.execute_hook(
             "before_ingest_file", file, cat=stray
         )
-        metadata["fileinfo"] = fileinfo
+        if fileinfo is not None:
+            metadata["fileinfo"] = fileinfo
 
         # split file into a list of docs
         docs = self.file_to_docs(

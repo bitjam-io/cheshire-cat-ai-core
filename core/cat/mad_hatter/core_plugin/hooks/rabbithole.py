@@ -198,3 +198,27 @@ def after_rabbithole_stored_documents(
     None
     """
     pass
+
+@hook(priority=0)
+def before_ingest_file(
+        file,  cat
+) -> None:
+    """Hook the File before is processed.
+
+    Allows editing and enhancing the list of Document after is inserted in the vector memory.
+
+    Parameters
+    ----------
+    source: str
+        Name of ingested file/url
+    docs : List[PointStruct]
+        List of Qdrant PointStruct just inserted into the db.
+    cat : CheshireCat
+        Cheshire Cat instance.
+
+    Returns
+    -------
+    None
+    """
+    pass
+    return None

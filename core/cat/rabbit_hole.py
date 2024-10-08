@@ -158,10 +158,10 @@ class RabbitHole:
         ----------
         before_rabbithole_stores_documents
         """
-        ff = stray.mad_hatter.execute_hook(
+        fileinfo = stray.mad_hatter.execute_hook(
             "before_ingest_file", file, cat=stray
         )
-
+        metadata["fileinfo"] = fileinfo
 
         # split file into a list of docs
         docs = self.file_to_docs(
